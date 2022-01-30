@@ -25,6 +25,7 @@ class PCA:
         raw_data_centered = scaler.fit(raw_data_test).transform(raw_data_test)
         print("**************Centered Data************\n",raw_data_centered)
         print("**************Centered data Mean***************\n",raw_data_centered.mean(axis=0))
+
         eigenvalues, eigenvectors = np.linalg.eigh((np.dot(X_centered, X_centered.T))/N)
         #print("**************Eigen values*************\n", eigenvalues)
         idx = eigenvalues.argsort()[::-1]
